@@ -287,6 +287,57 @@ const testCases = [
         },
     },
     {
+        name: 'golang : hello world',
+        reqObject: {
+            language: 'golang',
+            script:
+                'package main\n' +
+                'import "fmt"\n' +
+                'func main() {\n' +
+                'fmt.Println("hello world")\n' +
+                '}\n'
+        },
+        expectedResponse: {
+            val: 'hello world\n',
+            status: 200,
+            error: 0,
+        },
+    },
+    {
+        name: "golang : Add Two numbers",
+        reqObject: {
+          language: "golang",
+          script:
+            "package main\n" +
+            "import (\n" +
+            '"fmt"\n' +
+            ")\n" +
+            "func main() {\n" +
+            "number1 := 3\n" +
+            "number2 := 7\n" +
+            "result := number1 + number2\n" +
+            'fmt.Printf("%d",result)\n' +
+            "}\n",
+        },
+        expectedResponse: {
+          val: "10",
+          status: 200,
+          error: 0,
+        },
+      },
+    {
+        name: "rust : hello world",
+        reqObject: {
+          language: "rust",
+          script: "fn main() {\n" + 'println!("Hello, world!");\n' + "}\n",
+        },
+        expectedResponse: {
+          val: "Hello, world!\n",
+          status: 200,
+          error: 0,
+        },
+      },
+    {
         name: 'OPEN AI test promptv2',
         reqObject: {
             language: 'promptv2',
